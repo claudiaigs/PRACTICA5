@@ -1,8 +1,16 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-
+/**
+ * Clase ListaDoblementeLigada
+ *
+ * Clase que implementa a la clase Lista
+ */
 public class ListaDoblementeLigada<T> implements Lista<T> {
-
+/**
+ * Clase Nodo
+ *
+ * Clase que define la estructura de un Nodo
+ */
      private class Nodo{
           public T elemento;
 
