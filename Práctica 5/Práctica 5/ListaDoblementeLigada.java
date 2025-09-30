@@ -17,28 +17,45 @@ public class ListaDoblementeLigada<T> implements Lista<T> {
           public Nodo siguiente;
 
           public Nodo anterior;
-
+     /**
+      * Constructor de un onjeto de la clase Nodo
+      *
+      * @param e el elemento que tendrá dicho nodo
+      */
           public Nodo(T e) {
                this.elemento = e;
           }
      }
-
+     /**
+      * Clase IteradorDoubleLinkedList
+      *
+      * Clase que define la estructura de un iterador para listas doblemente ligadas
+      */
      private class IteradorDoubleLinkedList implements Iterator<T> {
 
           public Nodo anterior;
 
           public Nodo siguiente;
-
+          /**
+      * Constructor de un objeto de la clase IteradorDoubleLinkedList
+      * no requiere parametros
+      */
           public IteradorDoubleLinkedList() {
                siguiente = cabeza;
           }
-
+           /**
+      * Verifica si hay otro elemento despues de este.
+      * @return true si hay otro elemento despúes de este, false en caso contrario
+      */
           @Override
 
           public boolean hasNext() {
                return siguiente != null;
           }
-
+          /**
+      * Devuelve el siguiente Nodo
+      * @return el siguiente Nodo
+      */
           @Override
           public T next() {
                if (siguiente == null) {
@@ -55,11 +72,16 @@ public class ListaDoblementeLigada<T> implements Lista<T> {
      private Nodo rabo;
 
      private int longitud;
-
+     /**
+      * Crea y devuelve un nuevo onjeto de la clase IteradorDoubleLinkedList
+      * @return Iterator de tipo IteradorDoubleLinkedList
+      */
      public Iterator<T> iterator() {
           return new IteradorDoubleLinkedList();
      }
-
+     /**
+      * Constructor de la clase ListaDoblementeLigada, no requiere parámetros.
+      */
      public ListaDoblementeLigada(){
           this.cabeza = null;
           this.rabo = null;
@@ -179,7 +201,6 @@ public class ListaDoblementeLigada<T> implements Lista<T> {
      }
      /**
      * Devuelve el índice de la primera aparición de un elemento.
-     * Implementación según la Nota 10.
      *
      * @param elemento el elemento a buscar
      * @return el índice del elemento
@@ -204,7 +225,6 @@ public class ListaDoblementeLigada<T> implements Lista<T> {
      }
      /**
      * Inserta un elemento al final de la lista.
-     * Implementación según la Nota 10.
      *
      * @param elemento el elemento a insertar
      * @throws IllegalArgumentException si el elemento es nulo
@@ -239,7 +259,6 @@ public class ListaDoblementeLigada<T> implements Lista<T> {
 
      /**
      * Devuelve el nodo en una posición específica.
-     * Implementación según la Nota 10.
      *
      * @param i índice del nodo a acceder
      * @return el nodo en la posición i
@@ -266,7 +285,11 @@ public class ListaDoblementeLigada<T> implements Lista<T> {
           }
           return actual;
      }
-
+  /**
+     * Devuelve la lista en formato de String.
+     *
+     * @return el string que representa a toda la lista
+     */
      public String toString(){
           String s = "[";
           int cont = 0;
